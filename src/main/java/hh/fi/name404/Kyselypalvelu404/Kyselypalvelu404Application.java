@@ -9,4 +9,5 @@ public class Kyselypalvelu404Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Kyselypalvelu404Application.class, args);
 	}
+
 }
