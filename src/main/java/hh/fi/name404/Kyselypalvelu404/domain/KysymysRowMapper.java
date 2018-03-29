@@ -9,8 +9,8 @@ public class KysymysRowMapper implements RowMapper<Kysymys> {
 	
 	public Kysymys mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Kysymys kysymys = new Kysymys();
-		kysymys.setId(rs.getLong("Kysymysid"));
-		kysymys.setTeksti(rs.getString("Kysymykset"));
+		kysymys.setId(rs.getLong("kysymysid"));
+		kysymys.setTeksti(rs.getString("kysymykset"));
 		return kysymys;
 	}
 
