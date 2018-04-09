@@ -9,13 +9,13 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 @SpringBootApplication
 public class Kyselypalvelu404Application extends SpringBootServletInitializer {
 	
+	public static void main(String[] args) {
+		SpringApplication.run(Kyselypalvelu404Application.class, args);
+	}
+	
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder	application) {
 		return application.sources(Kyselypalvelu404Application.class);
-	}
-
-	public static void main(String[] args) {
-		SpringApplication.run(Kyselypalvelu404Application.class, args);
 	}
 
 }

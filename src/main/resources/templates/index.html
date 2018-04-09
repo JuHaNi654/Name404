@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>REST API Dokumentti</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="restapi.css">
+</head>
+
+<body>
+	<header>
+		<div class="jumbotron text-center" id="jumbotron">
+			<h1>REST API Dokumentti</h1>
+			<p>Käyttöohjeet REST API:lle @ Ohjelmointiprojekti 1</p>
+			<p>Käyttäjäryhmät: Tikiboksi & Ryhmä 4</p>
+			<p>&#169; Name404</p>
+		</div>
+	</header>
+	
+	<section>
+		<div class="container" id="container">
+			<div class="row" id="row">
+				<div class="col-12 text-left" id="col-12">
+				  <h3>Kaikki ryhmän kysymykset haettuna ryhmä id:llä</h3>
+				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">ryhmat/{id}</span></p>
+				  <h4>Esimerkkejä:</h4>
+				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">ryhmat/1</span></p>
+				  <p>{"ryhmaid":1,"ryhmanimi":"tiimi4","kysymykset":[{"id":1,"kysymys":"Oletko ajatellut tulla pyörällä kouluun?"},{"id":2,"kysymys":"Mikä houkuttaisi pyöräilyn valitsemisen koulumatkalle?"},{"id":3,"kysymys":"Miten koulu voisi tukea pyöräilyä?"}]}</p>
+				</div>
+				<div class="col-12 text-left" id="col-12">
+				  <h3>Yksittäisen kysymyksen etsiminen id:llä</h3>
+				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kysymykset/{id}</span></p>
+				  <h4>Esimerkki:</h4>
+				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kysymykset/1</span></p>
+				  <p>{"id":1,"kysymys":"Oletko ajatellut tulla pyörällä kouluun?"}</p>
+				</div>
+				<div class="col-12 text-left" id="col-12">
+				  <h3>Kaikki kysymykset</h3>
+				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kysymykset</span></p>
+				  <p>[{"id":1,"kysymys":"Oletko ajatellut tulla pyörällä kouluun?"},{"id":2,"kysymys":"Mikä houkuttaisi pyöräilyn valitsemisen koulumatkalle?"},{"id":3,"kysymys":"Miten koulu voisi tukea pyöräilyä?"},{"id":4,"kysymys":"Käytätkö koulun tietokoneita?"},{"id":5,"kysymys":"Jos käytät niin miksi / jos et käytä niin miksi et?"},{"id":6,"kysymys":"Kehitysehdotukset?"}]</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

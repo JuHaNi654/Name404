@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import hh.fi.name404.Kyselypalvelu404.domain.Kysymys;
@@ -40,5 +41,16 @@ public class KysymysController {
 		return rrepository.findOne(ryhmaid);
 	}
 	
+	// REST API DOKUMENTTI
+	
+	@RequestMapping(value="/index")
+    public String restApiDokumentti() {	
+        return "index";
+    }
+	
+	@RequestMapping(value="/")
+    public String restApiDokumenttiReD() {	
+        return "redirect:/index";
+    }
 	
 }
