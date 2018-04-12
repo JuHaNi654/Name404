@@ -13,16 +13,16 @@ public class Ryhma {
 	@Id
 	private Long ryhmaid;
 	
-	private String ryhmanimi;
+	private String nimi;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "ryhma")
-	private List<Kysymys> kysymykset;
+	private List<Kysely> kyselyt;
 
 	public Ryhma(Long ryhmaid, String ryhmanimi, List<Kysymys> kysymykset) {
 		super();
 		this.ryhmaid = ryhmaid;
-		this.ryhmanimi = ryhmanimi;
-		this.kysymykset = kysymykset;
+		this.nimi = ryhmanimi;
+		this.kyselyt = kyselyt;
 	}
 
 	public Ryhma() {
@@ -37,22 +37,21 @@ public class Ryhma {
 		this.ryhmaid = ryhmaid;
 	}
 
-	public String getRyhmanimi() {
-		return ryhmanimi;
+	public String getNimi() {
+		return nimi;
 	}
 
-	public void setRyhmanimi(String ryhmanimi) {
-		this.ryhmanimi = ryhmanimi;
+	public void setNimi(String nimi) {
+		this.nimi = nimi;
 	}
 
-	public List<Kysymys> getKysymykset() {
-		return kysymykset;
+	public List<Kysely> getKyselyt() {
+		return kyselyt;
 	}
 
-	public void setKysymykset(List<Kysymys> kysymykset) {
-		this.kysymykset = kysymykset;
+	public void setKyselyt(List<Kysely> kyselyt) {
+		this.kyselyt = kyselyt;
 	}
-	
 	
 	
 }
