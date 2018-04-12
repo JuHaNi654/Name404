@@ -18,7 +18,7 @@ public class Ryhma {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "ryhma")
 	private List<Kysely> kyselyt;
 
-	public Ryhma(Long ryhmaid, String ryhmanimi, List<Kysymys> kysymykset) {
+	public Ryhma(Long ryhmaid, String ryhmanimi, List<Kysely> kyselyt) {
 		super();
 		this.ryhmaid = ryhmaid;
 		this.nimi = ryhmanimi;
