@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Kysymys {
 	
@@ -20,10 +22,11 @@ public class Kysymys {
 	
 	private String kysymys;
 	
-	private String tyyppi;
+	private int tyyppi;
 	
 	@ManyToOne
-	@JoinColumn(name="kysymykset")
+	@JsonIgnore
+	@JoinColumn(name="kyselyid")
 	private Kysely kysely;
 	
 	@OneToMany (cascade = CascadeType.ALL, mappedBy = "kysymys")
@@ -33,7 +36,7 @@ public class Kysymys {
 
 	}
 
-	public Kysymys(Long kysymysid, String kysymys, String tyyppi, Kysely kysely, List<Vastaus> vastaukset) {
+	public Kysymys(Long kysymysid, String kysymys, int tyyppi, Kysely kysely, List<Vastaus> vastaukset) {
 		super();
 		this.kysymysid = kysymysid;
 		this.kysymys = kysymys;
@@ -58,11 +61,11 @@ public class Kysymys {
 		this.kysymys = kysymys;
 	}
 
-	public String getTyyppi() {
+	public int getTyyppi() {
 		return tyyppi;
 	}
 
-	public void setTyyppi(String tyyppi) {
+	public void setTyyppi(int tyyppi) {
 		this.tyyppi = tyyppi;
 	}
 

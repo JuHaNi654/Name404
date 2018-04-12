@@ -42,8 +42,8 @@ public class KysymysController {
 		return rrepository.findOne(ryhmaid);
 	}
 	
-	@GetMapping(value="/kysymykset/{kysymysid}/vastaukset/")
-	public @ResponseBody Kysymys kysymyksenVastauksetRest(@PathVariable("kysymysid") Long kysymysid) {
+	@GetMapping(value="/kysymykset/{id}/vastaukset/")
+	public @ResponseBody Kysymys kysymyksenVastauksetRest(@PathVariable("id") Long kysymysid) {
 		return krepository.findOne(kysymysid);
 	}
 	

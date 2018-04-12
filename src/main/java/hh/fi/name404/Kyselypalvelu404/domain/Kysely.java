@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Kysely {
 	
@@ -22,8 +24,10 @@ public class Kysely {
 	@OneToMany (cascade = CascadeType.ALL, mappedBy = "kysely")
 	private List<Kysymys> kysymykset;
 	
+	
 	@ManyToOne
-	@JoinColumn(name="kysely")
+	@JsonIgnore
+	@JoinColumn(name="ryhmaid")
 	private Ryhma ryhma;
 	
 	public Kysely() {

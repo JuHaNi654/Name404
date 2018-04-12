@@ -7,25 +7,28 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Vastaus {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long vastausid;
-	private String sisalto;
+	private String vastaus;
 	
 	public Vastaus() {
 		
 	}
 	
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name = "kysymysid")
 	private Kysymys kysymys;
 
-	public Vastaus(Long vastausid, String sisalto) {
+	public Vastaus(Long vastausid, String vastaus) {
 		super();
 		this.vastausid = vastausid;
-		this.sisalto = sisalto;
+		this.vastaus = vastaus;
 	}
 
 	public Long getVastausid() {
@@ -36,12 +39,12 @@ public class Vastaus {
 		this.vastausid = vastausid;
 	}
 
-	public String getSisalto() {
-		return sisalto;
+	public String getvastaus() {
+		return vastaus;
 	}
 
-	public void setSisalto(String sisalto) {
-		this.sisalto = sisalto;
+	public void setvastaus(String vastaus) {
+		this.vastaus = vastaus;
 	}
 
 	public Kysymys getKysymys() {
@@ -54,7 +57,7 @@ public class Vastaus {
 
 	@Override
 	public String toString() {
-		return "Vastaus [vastausid=" + vastausid + ", sisalto=" + sisalto + "]";
+		return "Vastaus [vastausid=" + vastausid + ", vastaus=" + vastaus + "]";
 	}
 	
 }
