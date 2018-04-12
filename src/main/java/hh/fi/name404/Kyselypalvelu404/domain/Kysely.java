@@ -2,10 +2,14 @@ package hh.fi.name404.Kyselypalvelu404.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Kysely {
@@ -14,7 +18,12 @@ public class Kysely {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long kyselyid;
 	private String nimi;
+	
+	@OneToMany (cascade = CascadeType.ALL, mappedBy = "kysely")
 	private List<Kysymys> kysymykset;
+	
+	@ManyToOne
+	@JoinColumn(name="kysely")
 	private Ryhma ryhma;
 	
 	public Kysely() {
