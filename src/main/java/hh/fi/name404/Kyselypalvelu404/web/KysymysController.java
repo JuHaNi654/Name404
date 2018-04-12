@@ -26,6 +26,7 @@ public class KysymysController {
 	public @ResponseBody List<Kysymys> kysymysListRest() {
 		return (List<Kysymys>) krepository.findAll();
 	}
+	
 	@GetMapping(value="/kysymykset/{id}")
 	public @ResponseBody Kysymys findKysymysRest(@PathVariable("id") Long id) {
 		return krepository.findOne(id);
@@ -39,6 +40,11 @@ public class KysymysController {
 	@GetMapping(value="/ryhmat/{id}")
 	public @ResponseBody Ryhma findRyhmaRest(@PathVariable("id") Long ryhmaid) {
 		return rrepository.findOne(ryhmaid);
+	}
+	
+	@GetMapping(value="/kysymykset/{kysymysid}/vastaukset/")
+	public @ResponseBody Kysymys kysymyksenVastauksetRest(@PathVariable("kysymysid") Long kysymysid) {
+		return krepository.findOne(kysymysid);
 	}
 	
 	// REST API DOKUMENTTI
