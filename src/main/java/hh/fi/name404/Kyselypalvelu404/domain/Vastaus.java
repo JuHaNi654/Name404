@@ -15,19 +15,23 @@ public class Vastaus {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long vastausid;
 	private String vastaus;
-	
-	public Vastaus() {
 		
-	}
-	
 	@ManyToOne
 	@JsonIgnore
 	@JoinColumn(name = "kysymysid")
 	private Kysymys kysymys;
 
+	public Vastaus() {
+
+	}
+	
 	public Vastaus(Long vastausid, String vastaus) {
 		super();
-		this.vastausid = vastausid;
+		this.vastaus = vastaus;
+	}
+	
+	public Vastaus(String vastaus) {
+		super();
 		this.vastaus = vastaus;
 	}
 
@@ -57,7 +61,9 @@ public class Vastaus {
 
 	@Override
 	public String toString() {
-		return "Vastaus [vastausid=" + vastausid + ", vastaus=" + vastaus + "]";
+		return "Vastaus [vastausid=" + vastausid + ", vastaus=" + vastaus + ", kysymys=" + kysymys + "]";
 	}
+
+	
 	
 }
