@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Ryhma {
 
@@ -16,6 +18,7 @@ public class Ryhma {
 	private String nimi;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "ryhma")
+	@JsonIgnore
 	private List<Kysely> kyselyt;
 
 	public Ryhma(Long ryhmaid, String ryhmanimi, List<Kysely> kyselyt) {

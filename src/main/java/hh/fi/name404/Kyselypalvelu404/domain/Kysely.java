@@ -26,7 +26,6 @@ public class Kysely {
 	
 	
 	@ManyToOne
-	@JsonIgnore
 	@JoinColumn(name="ryhmaid")
 	private Ryhma ryhma;
 	
