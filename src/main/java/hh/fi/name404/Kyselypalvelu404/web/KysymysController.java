@@ -50,8 +50,8 @@ public class KysymysController {
 	}
 	
 	@GetMapping(value="/kysymykset/{id}/vastaukset")
-	public @ResponseBody List<Vastaus> kysymyksenVastauksetRest(@PathVariable("id") Long kysymysid) {
-		List<Vastaus> vastaukset = vrepository.findAllByKysymysid(kysymysid);
+	public @ResponseBody List<Vastaus> kysymyksenVastauksetRest(@PathVariable("id") Kysymys kysymys) {
+		List<Vastaus> vastaukset = vrepository.findAllByKysymys(kysymys);
 		return vastaukset;
 	}
 	

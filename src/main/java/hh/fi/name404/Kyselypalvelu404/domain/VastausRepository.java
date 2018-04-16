@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface VastausRepository extends CrudRepository<Vastaus, Long> {
 	
-	List<Vastaus> findAllByKysymysid(Long kysymysid);
+	List<Vastaus> findAllByKysymys(Kysymys kysymys);
 
 }

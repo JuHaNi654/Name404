@@ -29,8 +29,11 @@ public class Kysymys {
 	@JoinColumn(name="kyselyid")
 	private Kysely kysely;
 
-	public Kysymys() {
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysymys")
+	private List<Vastaus> vastaukset;
 
+	public Kysymys() {
+		super();
 	}
 
 	public Kysymys(Long kysymysid, String kysymys, int tyyppi, Kysely kysely) {
@@ -73,12 +76,13 @@ public class Kysymys {
 		this.kysely = kysely;
 	}
 
-
-	@Override
-	public String toString() {
-		return "Kysymys [kysymysid=" + kysymysid + ", kysymys=" + kysymys + ", tyyppi=" + tyyppi + "]";
+	public List<Vastaus> getVastaukset() {
+		return vastaukset;
 	}
 
+	public void setVastaukset(List<Vastaus> vastaukset) {
+		this.vastaukset = vastaukset;
+	}
 	
 	
 }
