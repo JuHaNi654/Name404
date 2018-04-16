@@ -13,6 +13,8 @@ import hh.fi.name404.Kyselypalvelu404.domain.Kysymys;
 import hh.fi.name404.Kyselypalvelu404.domain.KysymysRepository;
 import hh.fi.name404.Kyselypalvelu404.domain.Ryhma;
 import hh.fi.name404.Kyselypalvelu404.domain.RyhmaRepository;
+import hh.fi.name404.Kyselypalvelu404.domain.Vastaus;
+import hh.fi.name404.Kyselypalvelu404.domain.VastausRepository;
 
 @Controller
 public class KysymysController {
@@ -21,6 +23,11 @@ public class KysymysController {
 	
 	@Autowired
 	private RyhmaRepository rrepository;
+	
+	@Autowired
+	private VastausRepository vrepository;
+	
+	
 	
 	@GetMapping(value="/kysymykset")
 	public @ResponseBody List<Kysymys> kysymysListRest() {
@@ -42,9 +49,10 @@ public class KysymysController {
 		return rrepository.findOne(ryhmaid);
 	}
 	
-	@GetMapping(value="/kysymykset/{id}/vastaukset/")
-	public @ResponseBody Kysymys kysymyksenVastauksetRest(@PathVariable("id") Long kysymysid) {
-		return krepository.findOne(kysymysid);
+	@GetMapping(value="/kysymykset/{id}/vastaukset")
+	public @ResponseBody List<Vastaus> kysymyksenVastauksetRest(@PathVariable("id") Long kysymysid) {
+		List<Vastaus> vastaukset = vrepository.findAllByKysymysid(kysymysid);
+		return vastaukset;
 	}
 	
 	// REST API DOKUMENTTI

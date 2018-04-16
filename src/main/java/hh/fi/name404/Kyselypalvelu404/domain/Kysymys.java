@@ -28,21 +28,17 @@ public class Kysymys {
 	@JsonIgnore
 	@JoinColumn(name="kyselyid")
 	private Kysely kysely;
-	
-	@OneToMany (cascade = CascadeType.ALL, mappedBy = "kysymys")
-	private List<Vastaus> vastaukset;
-	
+
 	public Kysymys() {
 
 	}
 
-	public Kysymys(Long kysymysid, String kysymys, int tyyppi, Kysely kysely, List<Vastaus> vastaukset) {
+	public Kysymys(Long kysymysid, String kysymys, int tyyppi, Kysely kysely) {
 		super();
 		this.kysymysid = kysymysid;
 		this.kysymys = kysymys;
 		this.tyyppi = tyyppi;
 		this.kysely = kysely;
-		this.vastaukset = vastaukset;
 	}
 
 	public Long getKysymysid() {
@@ -77,13 +73,6 @@ public class Kysymys {
 		this.kysely = kysely;
 	}
 
-	public List<Vastaus> getVastaukset() {
-		return vastaukset;
-	}
-
-	public void setVastaukset(List<Vastaus> vastaukset) {
-		this.vastaukset = vastaukset;
-	}
 
 	@Override
 	public String toString() {

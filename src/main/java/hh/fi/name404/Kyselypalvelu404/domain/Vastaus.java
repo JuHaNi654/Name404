@@ -16,10 +16,7 @@ public class Vastaus {
 	private Long vastausid;
 	private String vastaus;
 		
-	@ManyToOne
-	@JsonIgnore
-	@JoinColumn(name = "kysymysid")
-	private Kysymys kysymys;
+	private Long kysymysid;
 
 	public Vastaus() {
 
@@ -51,18 +48,19 @@ public class Vastaus {
 		this.vastaus = vastaus;
 	}
 
-	public Kysymys getKysymys() {
-		return kysymys;
+	public Long getKysymysid() {
+		return kysymysid;
 	}
 
-	public void setKysymys(Kysymys kysymys) {
-		this.kysymys = kysymys;
+	public void setKysymysid(Long kysymysid) {
+		this.kysymysid = kysymysid;
 	}
 
 	@Override
 	public String toString() {
-		return "Vastaus [vastausid=" + vastausid + ", vastaus=" + vastaus + ", kysymys=" + kysymys + "]";
+		return "Vastaus [vastausid=" + vastausid + ", vastaus=" + vastaus + ", kysymysid=" + kysymysid + "]";
 	}
+
 
 	
 	
