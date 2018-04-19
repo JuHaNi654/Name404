@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -20,6 +21,7 @@ public class Vastaus {
 	@ManyToOne
 	@JsonBackReference
 	@JoinColumn(name="kysymysid")
+	@NotNull
 	private Kysymys kysymys;
 
 	public Vastaus() {
