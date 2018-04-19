@@ -38,41 +38,55 @@
 				<div class="col-12 text-left" id="col-12">
 				  <h3>Kaikki kyselyt</h3>
 				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kyselyt</span></p>
-				  
+				  <div class="esimerkki">
+				  <h4>Esimerkki:</h4>
 				  <p>{"kyselyid":1,"nimi":"Pyöräily","kysymykset":[{"kysymysid":1,"kysymys":"Oletko ajatellut tulla pyörällä kouluun?","tyyppi":1},{"kysymysid":2,"kysymys":"Mikä houkuttaisi pyöräilyn valitsemiseen koulumatkalle?","tyyppi":1},{"kysymysid":3,"kysymys":"Miten koulu voisi tukea pyöräilyä?","tyyppi":1}],"ryhma":{"ryhmaid":1,"nimi":"Ryhma4"}},{"kyselyid":2,"nimi":"Tyytyväisyys koulun tietokoneisiin","kysymykset":[{"kysymysid":4,"kysymys":"Käytätkö koulun tietokoneita","tyyppi":1},{"kysymysid":5,"kysymys":"Jos käytät niin miksi / jos et käytä niin miksi et?","tyyppi":1},{"kysymysid":6,"kysymys":"Kehitysehdotukset?","tyyppi":1}],"ryhma":{"ryhmaid":2,"nimi":"Tikiboxi"}}</p>
+					</div>
 				</div>
 				<div class="col-12 text-left" id="col-12">
 				  <h3>Kaikki kyselyt haettuna kyselyid:llä</h3>
 				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kyselyt/{id}</span></p>
-				  <h4>Esimerkkejä:</h4>
+				  <div class="esimerkki">
+				  <h4>Esimerkki:</h4>
 				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kyselyt/1</span></p>
 				  <p>{"kyselyid":1,"nimi":"Pyöräily","kysymykset":[{"kysymysid":1,"kysymys":"Oletko ajatellut tulla pyörällä kouluun?","tyyppi":1},{"kysymysid":2,"kysymys":"Mikä houkuttaisi pyöräilyn valitsemiseen koulumatkalle?","tyyppi":1},{"kysymysid":3,"kysymys":"Miten koulu voisi tukea pyöräilyä?","tyyppi":1}],"ryhma":{"ryhmaid":1,"nimi":"Ryhma4"}}</p>
+					</div>
 				</div>
 				<div class="col-12 text-left" id="col-12">
 				  <h3>Kaikki kysymykset</h3>
 				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kysymykset</span></p>
+				  <div class="esimerkki">
+				  <h4>Esimerkki:</h4>
 				  <p>{"kysymysid":1,"kysymys":"Oletko ajatellut tulla pyörällä kouluun?","tyyppi":1},{"kysymysid":2,"kysymys":"Mikä houkuttaisi pyöräilyn valitsemiseen koulumatkalle?","tyyppi":1},{"kysymysid":3,"kysymys":"Miten koulu voisi tukea pyöräilyä?","tyyppi":1},{"kysymysid":4,"kysymys":"Käytätkö koulun tietokoneita","tyyppi":1},{"kysymysid":5,"kysymys":"Jos käytät niin miksi / jos et käytä niin miksi et?","tyyppi":1},{"kysymysid":6,"kysymys":"Kehitysehdotukset?","tyyppi":1}</p>
+				  </div>
 				</div>
 				<div class="col-12 text-left" id="col-12">
 				  <h3>Yksittäisen kysymyksen etsiminen id:llä</h3>
 				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kysymykset/{id}</span></p>
+				  <div class="esimerkki">
 				  <h4>Esimerkki:</h4>
 				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kysymykset/1</span></p>
 				  <p>{"kysymysid":1,"kysymys":"Oletko ajatellut tulla pyörällä kouluun?","tyyppi":1}</p>
+					</div>
 				</div>
 				<div class="col-12 text-left" id="col-12">
 				  <h3>Kaikki vastaukset haettuna kysymyksen id:llä</h3>
 				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kysymykset/{id}/vastaukset</span></p>
-				  <h4>Esimerkkejä:</h4>
+				  <div class="esimerkki">
+				  <h4>Esimerkki:</h4>
 				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kysymykset/1/vastaukset</span></p>
 				  <p>{"vastausid":1,"vastaus":"Esimerkkivastaus kysymykseen 1","kysymysid":1},{"vastausid":2,"vastaus":"Toinen esimerkkivastaus kysymykseen 1","kysymysid":1}</p>
+					</div>
 				</div>
 				<div class="col-12 text-left" id="col-12">
 				  <h3>Lisää uusi vastaus</h3>
-				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">addvastaus</span></p>
+				  <p>http://proto302.haaga-helia.fi:8080/KyselyPalvelu404/<span id="bold">addvastaus</span></p>
+				  <div class="esimerkki">
+				  <h4>Esimerkki:</h4>
 				  <p>{ "vastaus": "Neljäs vastaus", "kysymysid":1}</p>
 				  <h4>Komentoriviesimerkki:</h4>
-				  <p>curl -H "Content-Type: application/json" -X POST -d '{"vastaus":"Esimerkkivastaus","kysymysid":1}' http://proto302.haaga-helia.fi:8080/KyselyPalvelu404/addvastaus</p>
+				  <p>curl -H "Content-Type: application/json" -X POST -d '{"vastaus”:”Esimerkkivastaus", "kysymys":{"kysymysid”:”1”}}’ http://proto302.haaga-helia.fi:8080/KyselyPalvelu404/addvastaus</p>
+				</div>
 				</div>
 			</div>
 		</div>
