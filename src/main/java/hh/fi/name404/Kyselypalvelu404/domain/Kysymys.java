@@ -11,7 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Kysymys {
@@ -28,7 +30,8 @@ public class Kysymys {
 	@JsonIgnore
 	@JoinColumn(name="kyselyid")
 	private Kysely kysely;
-
+	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysymys")
 	private List<Vastaus> vastaukset;
 
@@ -75,7 +78,7 @@ public class Kysymys {
 	public void setKysely(Kysely kysely) {
 		this.kysely = kysely;
 	}
-
+	
 	public List<Vastaus> getVastaukset() {
 		return vastaukset;
 	}
