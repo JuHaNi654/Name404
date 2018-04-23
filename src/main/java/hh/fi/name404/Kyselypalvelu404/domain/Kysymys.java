@@ -31,6 +31,9 @@ public class Kysymys {
 	@JoinColumn(name="kyselyid")
 	private Kysely kysely;
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysymys")
+	private List<Vaihtoehto> vaihtoehdot;
+	
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysymys")
 	private List<Vastaus> vastaukset;
@@ -45,6 +48,15 @@ public class Kysymys {
 		this.kysymys = kysymys;
 		this.tyyppi = tyyppi;
 		this.kysely = kysely;
+	}
+	
+	
+	public List<Vaihtoehto> getVaihtoehdot() {
+		return vaihtoehdot;
+	}
+
+	public void setVaihtoehdot(List<Vaihtoehto> vaihtoehdot) {
+		this.vaihtoehdot = vaihtoehdot;
 	}
 
 	public Long getKysymysid() {
