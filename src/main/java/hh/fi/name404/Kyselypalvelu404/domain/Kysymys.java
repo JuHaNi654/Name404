@@ -24,12 +24,15 @@ public class Kysymys {
 	
 	private String kysymys;
 	
-	private int tyyppi;
+	private String tyyppi;
 	
 	@ManyToOne
 	@JsonIgnore
 	@JoinColumn(name="kyselyid")
 	private Kysely kysely;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysymys")
+	private List<Vaihtoehto> vaihtoehdot;
 	
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysymys")
@@ -39,12 +42,21 @@ public class Kysymys {
 		super();
 	}
 
-	public Kysymys(Long kysymysid, String kysymys, int tyyppi, Kysely kysely) {
+	public Kysymys(Long kysymysid, String kysymys, String tyyppi, Kysely kysely) {
 		super();
 		this.kysymysid = kysymysid;
 		this.kysymys = kysymys;
 		this.tyyppi = tyyppi;
 		this.kysely = kysely;
+	}
+	
+	
+	public List<Vaihtoehto> getVaihtoehdot() {
+		return vaihtoehdot;
+	}
+
+	public void setVaihtoehdot(List<Vaihtoehto> vaihtoehdot) {
+		this.vaihtoehdot = vaihtoehdot;
 	}
 
 	public Long getKysymysid() {
@@ -63,11 +75,11 @@ public class Kysymys {
 		this.kysymys = kysymys;
 	}
 
-	public int getTyyppi() {
+	public String getTyyppi() {
 		return tyyppi;
 	}
 
-	public void setTyyppi(int tyyppi) {
+	public void setTyyppi(String tyyppi) {
 		this.tyyppi = tyyppi;
 	}
 
