@@ -3,14 +3,15 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>REST API Dokumentti</title>
-	<link rel="stylesheet" href="/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="/css/restapi.css" />
+	<link rel="stylesheet" href="../css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/restapi.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
 	<header>
 		<div class="jumbotron text-center" id="jumbotron">
-			<h1>REST API Dokumentti</h1>
+			<h1>REST API -dokumentti</h1>
 			<p>Käyttöohjeet REST API:lle @ Ohjelmointiprojekti 1</p>
 			<p>Käyttäjäryhmät: Tikiboksi &amp; Ryhmä 4</p>
 			<p>&#169; Name404</p>
@@ -22,75 +23,126 @@
 			<div class="row" id="row">
 				<div class="col-12 text-left" id="col-12">
 				  <h3>Kaikki polut</h3>
-				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/kyselyt</p>
-
-<p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/kyselyt/{id}</p>
-
-<p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/kysymykset/</p>
-
-<p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/kysymykset/{id}</p>
-
-<p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/kysymykset/{id}/vastaukset</p>
-
-<p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/addvastaus</p>
-				  
+				 	<p><a href="../kyselyt/" class="text-dark font-weight-bold">/kyselyt</a></p>
+					<p><a href="../kyselyt/1" class="text-dark font-weight-bold">/kyselyt/{id}</a></p>
+					<p><a href="../kysymykset/" class="text-dark font-weight-bold">/kysymykset/</a></p>
+					<p><a href="../kysymykset/1" class="text-dark font-weight-bold">/kysymykset/{id}</a></p>
+					<p><a href="../kysymykset/1/vastaukset" class="text-dark font-weight-bold">/kysymykset/{id}/vastaukset</a></p>
+					<p><a href="../addvastaus" class="text-dark font-weight-bold">/addvastaus</a></p>
 				</div>
+				
 				<div class="col-12 text-left" id="col-12">
 				  <h3>Kaikki kyselyt</h3>
-				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kyselyt</span></p>
-				  <div class="esimerkki">
-				  <h4>Esimerkki:</h4>
-				  <p>{"kyselyid":1,"nimi":"Pyöräily","kysymykset":[{"kysymysid":1,"kysymys":"Oletko ajatellut tulla pyörällä kouluun?","tyyppi":1},{"kysymysid":2,"kysymys":"Mikä houkuttaisi pyöräilyn valitsemiseen koulumatkalle?","tyyppi":1},{"kysymysid":3,"kysymys":"Miten koulu voisi tukea pyöräilyä?","tyyppi":1}],"ryhma":{"ryhmaid":1,"nimi":"Ryhma4"}},{"kyselyid":2,"nimi":"Tyytyväisyys koulun tietokoneisiin","kysymykset":[{"kysymysid":4,"kysymys":"Käytätkö koulun tietokoneita","tyyppi":1},{"kysymysid":5,"kysymys":"Jos käytät niin miksi / jos et käytä niin miksi et?","tyyppi":1},{"kysymysid":6,"kysymys":"Kehitysehdotukset?","tyyppi":1}],"ryhma":{"ryhmaid":2,"nimi":"Tikiboxi"}}</p>
-					</div>
+				  <p><a href="../kyselyt/" class="text-dark font-weight-bold">/kyselyt</a></p>
+				<p><button class="btn btn-success" type="button" data-toggle="collapse" data-target="#esimerkki1" aria-expanded="false" aria-controls="esimerkki1">Avaa esimerkki</button>
+    				<div class="collapse multi-collapse" id="esimerkki1">
+      				<div class="card card-body">
+        					<pre class="prettyprint">
+        					<p id="demo1"></p>
+        					</pre>
+        					</div>
+  				</div></p>
 				</div>
 				<div class="col-12 text-left" id="col-12">
-				  <h3>Kaikki kyselyt haettuna kyselyid:llä</h3>
-				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kyselyt/{id}</span></p>
-				  <div class="esimerkki">
-				  <h4>Esimerkki:</h4>
-				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kyselyt/1</span></p>
-				  <p>{"kyselyid":1,"nimi":"Pyöräily","kysymykset":[{"kysymysid":1,"kysymys":"Oletko ajatellut tulla pyörällä kouluun?","tyyppi":1},{"kysymysid":2,"kysymys":"Mikä houkuttaisi pyöräilyn valitsemiseen koulumatkalle?","tyyppi":1},{"kysymysid":3,"kysymys":"Miten koulu voisi tukea pyöräilyä?","tyyppi":1}],"ryhma":{"ryhmaid":1,"nimi":"Ryhma4"}}</p>
-					</div>
-				</div>
+				  <h3>Yksi kysely haettuna kyselyid:llä</h3>
+				  <p><a href="../kyselyt/1" class="text-dark font-weight-bold">/kyselyt/{id}</a></p>
+				  <p><button class="btn btn-success" type="button" data-toggle="collapse" data-target="#esimerkki2" aria-expanded="false" aria-controls="esimerkki2">Avaa esimerkki</button>
+    				<div class="collapse multi-collapse" id="esimerkki2">
+      				<div class="card card-body">
+        					<pre class="prettyprint">
+        					<p id="demo2"></p>
+        					</pre>
+        					</div>
+  				</div></p>
+				  </div>
 				<div class="col-12 text-left" id="col-12">
 				  <h3>Kaikki kysymykset</h3>
-				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kysymykset</span></p>
-				  <div class="esimerkki">
-				  <h4>Esimerkki:</h4>
-				  <p>{"kysymysid":1,"kysymys":"Oletko ajatellut tulla pyörällä kouluun?","tyyppi":1},{"kysymysid":2,"kysymys":"Mikä houkuttaisi pyöräilyn valitsemiseen koulumatkalle?","tyyppi":1},{"kysymysid":3,"kysymys":"Miten koulu voisi tukea pyöräilyä?","tyyppi":1},{"kysymysid":4,"kysymys":"Käytätkö koulun tietokoneita","tyyppi":1},{"kysymysid":5,"kysymys":"Jos käytät niin miksi / jos et käytä niin miksi et?","tyyppi":1},{"kysymysid":6,"kysymys":"Kehitysehdotukset?","tyyppi":1}</p>
-				  </div>
-				</div>
+					<p><a href="../kysymykset/" class="text-dark font-weight-bold">/kysymykset/</a></p>
+					<p><button class="btn btn-success" type="button" data-toggle="collapse" data-target="#esimerkki3" aria-expanded="false" aria-controls="esimerkki3">Avaa esimerkki</button>
+    				<div class="collapse multi-collapse" id="esimerkki3">
+      				<div class="card card-body">
+      				<pre class="prettyprint">
+        					<p id="demo3"></p>
+        					</pre></div>
+  				</div></p>
+					</div>
 				<div class="col-12 text-left" id="col-12">
 				  <h3>Yksittäisen kysymyksen etsiminen id:llä</h3>
-				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kysymykset/{id}</span></p>
-				  <div class="esimerkki">
-				  <h4>Esimerkki:</h4>
-				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kysymykset/1</span></p>
-				  <p>{"kysymysid":1,"kysymys":"Oletko ajatellut tulla pyörällä kouluun?","tyyppi":1}</p>
-					</div>
+				  <p><a href="../kysymykset/1" class="text-dark font-weight-bold">/kysymykset/{id}</a></p>
+				  <p><button class="btn btn-success" type="button" data-toggle="collapse" data-target="#esimerkki4" aria-expanded="false" aria-controls="esimerkki4">Avaa esimerkki</button>
+    				<div class="collapse multi-collapse" id="esimerkki4">
+      				<div class="card card-body">
+        				<pre class="prettyprint">
+        					<p id="demo4"></p>
+        					</pre>
+        				</div>
+  				</div></p>
 				</div>
 				<div class="col-12 text-left" id="col-12">
 				  <h3>Kaikki vastaukset haettuna kysymyksen id:llä</h3>
-				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kysymykset/{id}/vastaukset</span></p>
-				  <div class="esimerkki">
-				  <h4>Esimerkki:</h4>
-				  <p>http://proto302.haaga-helia.fi:8080/Kyselypalvelu404/<span id="bold">kysymykset/1/vastaukset</span></p>
-				  <p>{"vastausid":1,"vastaus":"Esimerkkivastaus kysymykseen 1","kysymysid":1},{"vastausid":2,"vastaus":"Toinen esimerkkivastaus kysymykseen 1","kysymysid":1}</p>
+				  <p><a href="../kysymykset/1/vastaukset" class="text-dark font-weight-bold">/kysymykset/{id}/vastaukset</a></p>
+				  <p><button class="btn btn-success" type="button" data-toggle="collapse" data-target="#esimerkki5" aria-expanded="false" aria-controls="esimerkki5">Avaa esimerkki</button>
+    				<div class="collapse multi-collapse" id="esimerkki5">
+      				<div class="card card-body">
+        				<pre class="prettyprint">
+        					<p id="demo5"></p>
+        					</pre>
 					</div>
+  				</div></p>
 				</div>
 				<div class="col-12 text-left" id="col-12">
 				  <h3>Lisää uusi vastaus</h3>
-				  <p>http://proto302.haaga-helia.fi:8080/KyselyPalvelu404/<span id="bold">addvastaus</span></p>
+				  <p><a href="../addvastaus" class="text-dark font-weight-bold">/addvastaus</a></p>
 				  <div class="esimerkki">
 				  <h4>Esimerkki:</h4>
 				  <p>{"vastaus":"Esimerkkivastaus", "kysymys":{"kysymysid":"1"}}</p>
 				  <h4>Komentoriviesimerkki:</h4>
-				  <p>curl -H "Content-Type: application/json" -X POST -d '{"vastaus":"Esimerkkivastaus", "kysymys":{"kysymysid":"1"}}' http://proto302.haaga-helia.fi:8080/KyselyPalvelu404/addvastaus</p>
+				  <p>Proto: <br/> curl -H "Content-Type: application/json" -X POST -d '{"vastaus":"Esimerkkivastaus", "kysymys":{"kysymysid":"1"}}' http://proto302.haaga-helia.fi:8080/KyselyPalvelu404/addvastaus</p>
+				  <p>Heroku: <br/>curl -H "Content-Type: application/json" -X POST -d '{"vastaus":"Esimerkkivastaus", "kysymys":{"kysymysid":"1"}}' http://dry-scrubland-49363.herokuapp.com/addvastaus</p>
 				</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	
+	<script>
+$.getJSON('../kyselyt/', function(data) {
+	console.log(data);
+	var myJSON = JSON.stringify(data, null, 2);
+	document.getElementById("demo1").innerHTML = myJSON;
+});
+
+$.getJSON('../kyselyt/1', function(data) {
+	console.log(data);
+	var myJSON = JSON.stringify(data, null, 2);
+	document.getElementById("demo2").innerHTML = myJSON;
+});
+
+$.getJSON('../kysymykset', function(data) {
+	console.log(data);
+	var myJSON = JSON.stringify(data, null, 2);
+	document.getElementById("demo3").innerHTML = myJSON;
+});
+
+$.getJSON('../kysymykset/1', function(data) {
+	console.log(data);
+	var myJSON = JSON.stringify(data, null, 2);
+	document.getElementById("demo4").innerHTML = myJSON;
+});
+
+$.getJSON('../kysymykset/1/vastaukset', function(data) {
+	console.log(data);
+	var myJSON = JSON.stringify(data, null, 2);
+	document.getElementById("demo5").innerHTML = myJSON;
+});
+
+</script>
+	
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>
 
 </html>
