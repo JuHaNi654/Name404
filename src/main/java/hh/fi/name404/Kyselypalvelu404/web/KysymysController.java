@@ -55,16 +55,4 @@ public class KysymysController {
 		return vastaukset;
 	}
 	
-	// REST API DOKUMENTTI
-	
-	@RequestMapping(value="/index")
-    public String restApiDokumentti() {	
-        return "index";
-    }
-	
-	@RequestMapping(value="/")
-    public String restApiDokumenttiReD() {	
-        return "redirect:/index";
-    }
-	
 }

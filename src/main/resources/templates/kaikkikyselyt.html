@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Kyselyt</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" th:href="@{css/bootstrap.css}" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-grid.css" th:href="@{css/bootstrap-grid.css}" />
+    <link rel="stylesheet" type="text/css" href="css/tyylit.css"/>
+</head>
+<body>
+	<div class="container">
+	<div class="row">
+     	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	     	<div class="col" id="otsikko">
+	     		<h1>Kyselyt</h1>
+	     	</div>
+     	</div>
+     </div>
+     <div class="row">
+	     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		     <div class="col" id="navigaatio">
+		     	<a href="/lisaa" class="btn btn-success" id="buttons">Uusi kysely</a>
+		     </div>
+	     </div>
+	 </div>
+	
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="table-responsive">
+			    <table class="table table-striped">
+				    <thead>
+						<tr>
+						    <th scope="col">Id</th>
+						    <th scope="col">Nimi</th>
+						    <th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+				    	<tr th:each = "kysely : ${kyselyt}">
+				    		<td th:text="${kysely.kyselyid}"></td>
+				    		<td th:text="${kysely.nimi}"></td>
+				    		<td><a th:href="@{/muokkaakyselya/{kyselyid}(kyselyid=${kysely.kyselyid})}" class="btn btn-warning">Muokkaa</a></td>
+				    	</tr>
+				    </tbody>
+			    </table>
+		    </div>
+	   	</div>
+	</div>
+	</div>
+</body>
+</html>
