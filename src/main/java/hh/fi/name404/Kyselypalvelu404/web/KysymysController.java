@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import hh.fi.name404.Kyselypalvelu404.domain.Kysymys;
 import hh.fi.name404.Kyselypalvelu404.domain.KysymysRepository;
@@ -15,8 +17,8 @@ import hh.fi.name404.Kyselypalvelu404.domain.Ryhma;
 import hh.fi.name404.Kyselypalvelu404.domain.RyhmaRepository;
 import hh.fi.name404.Kyselypalvelu404.domain.Vastaus;
 import hh.fi.name404.Kyselypalvelu404.domain.VastausRepository;
-
-@Controller
+@RestController
+@CrossOrigin
 public class KysymysController {
 	@Autowired
 	private KysymysRepository krepository;
