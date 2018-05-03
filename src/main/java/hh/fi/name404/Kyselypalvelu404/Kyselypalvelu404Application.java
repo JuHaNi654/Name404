@@ -21,7 +21,6 @@ public class Kyselypalvelu404Application extends SpringBootServletInitializer {
 }
 */
 
-
 @SpringBootApplication
 public class Kyselypalvelu404Application  {
 
