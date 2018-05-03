@@ -6,8 +6,8 @@
 	<groupId>hh.fi.name404</groupId>
 	<artifactId>Kyselypalvelu404</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
-	<!-- <packaging>jar</packaging>  -->
+	<!-- <packaging>war</packaging>  -->
+	<packaging>jar</packaging>
 
 	<name>Kyselypalvelu404</name>
 	<description>Demo project for Spring Boot</description>
@@ -23,7 +23,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<tomcat.version>8.0.3</tomcat.version>
+	<!-- 	<tomcat.version>8.0.3</tomcat.version> -->
 	</properties>
 
 	<dependencies>
@@ -67,11 +67,12 @@
 		</dependency>
 		<!-- <dependency> <groupId>org.springframework.security</groupId> <artifactId>spring-security-test</artifactId> 
 			<scope>test</scope> </dependency> -->
+			<!-- 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
-		</dependency>
+		</dependency> -->
 
 	</dependencies>
 

@@ -50,7 +50,6 @@ public class Kysymys {
 		this.kysely = kysely;
 	}
 	
-	
 	public List<Vaihtoehto> getVaihtoehdot() {
 		return vaihtoehdot;
 	}
@@ -98,6 +97,4 @@ public class Kysymys {
 	public void setVastaukset(List<Vastaus> vastaukset) {
 		this.vastaukset = vastaukset;
 	}
-	
-	
 }

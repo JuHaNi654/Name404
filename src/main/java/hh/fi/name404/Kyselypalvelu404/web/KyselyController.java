@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import hh.fi.name404.Kyselypalvelu404.domain.Kysely;
 import hh.fi.name404.Kyselypalvelu404.domain.KyselyRepository;
 import hh.fi.name404.Kyselypalvelu404.domain.KysymysRepository;
-import hh.fi.name404.Kyselypalvelu404.domain.RyhmaRepository;
 
 @Controller
 public class KyselyController {

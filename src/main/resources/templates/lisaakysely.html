@@ -2,71 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <title>Uusi kysely</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" th:href="@{css/bootstrap.css}" />
-    <link type="text/css" rel="stylesheet" href="css/bootstrap-grid.css" th:href="@{css/bootstrap-grid.css}" />
-    <link rel="stylesheet" type="text/css" href="css/tyylit.css"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" th:href="@{/css/bootstrap.css}" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-grid.css" th:href="@{/css/bootstrap-grid.css}" />
+    <link rel="stylesheet" type="text/css" href="css/tyylit.css" th:href="@{/css/tyylit.css}"/>
 </head>
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="otsikko">
-				<h1>Uusi kysely</h1>
-			</div>
-		</div>
-		
-		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="uusikysely">
-				<form th:object="${kysely}" th:action="@{savekysely}" action="#" method="post">
+				<form th:object="${kysely}" th:action="@{tallenna}" action="#" method="post">
 					<div class="col">
 						<label for="nimi">Nimi</label>
 						<input type="text" th:field="*{nimi}" />
 					</div>
 					<div class="col">
-						<label for="genre">Genre</label>
-						<select th:field="*{genre}">
-						<option th:each="genre: ${genres}" th:value="${genre.genreId}"
-						th:text="${genre.genreName}"></option>
+						<label for="ryhma">Ryhmä</label>
+						<select th:field="*{ryhma}">
+						<option th:each="ryhma: ${ryhmat}" th:value="${ryhma.ryhmaid}"
+						th:text="${ryhma.nimi}"></option>
 						</select>
 					</div>
-					<div class="col">
-						<label for="movieLength">Length</label>
-						<input type="text" th:field="*{movieLength}" />
-					</div>
-					<div class="col">	
-						<label for="year">Year</label>
-						<select th:field="*{year}">
-						<option th:each="year: ${years}" th:value="${year.yearId}"
-						th:text="${year.yearName}"></option>
-						</select>
-					</div>
-					<div class="col">
-						<label for="actor">Best actor</label>
-						<select th:field="*{actor}">
-						<option th:each="actor: ${actors}" th:value="${actor.actorId}"
-						th:text="${actor.actorName}"></option>
-						</select>
-					</div>
-					<div class="col">
-						<label for="movieIMDBURL">IMDBURL</label>
-						<input type="text" th:field="*{movieIMDBURL}" />
-					</div>
-					<div class="col">
-						<label for="moviereview">Review</label>
-						<select th:field="*{moviereview}">
-						<option th:each="moviereview: ${moviereviews}" th:value="${moviereview.movieReviewId}"
-						th:text="${moviereview.reviewName}"></option>
-						</select>
-					</div>
-					<div class="col">
-						<label for="stars">Stars</label>
-						<select th:field="*{stars}">
-						<option th:each="stars: ${starss}" th:value="${stars.starId}"
-						th:text="${stars.starName}"></option>
-						</select>
-					</div>
+					
 					<div class="col">
 						<input type="submit" value="Tallenna" class="btn btn-success"></input>
 					</div>
@@ -77,5 +36,8 @@
 			</div>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </body>
 </html>
