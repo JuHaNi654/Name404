@@ -8,23 +8,23 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import hh.fi.name404.Kyselypalvelu404.domain.Kysely;
 import hh.fi.name404.Kyselypalvelu404.domain.KyselyRepository;
 import hh.fi.name404.Kyselypalvelu404.domain.KysymysRepository;
 
-@Controller
+@RestController
+@CrossOrigin
 public class KyselyController {
 	@Autowired KyselyRepository krepository;
 	@Autowired KysymysRepository kyrepository;
 	
-	@CrossOrigin
 	@GetMapping(value="/kyselyt")
 	public @ResponseBody List<Kysely> kyselyListRest() {
 		return (List<Kysely>) krepository.findAll();
 	}
 	
-	@CrossOrigin
 	@GetMapping(value="/kyselyt/{id}")
 	public @ResponseBody  Kysely findKyselyRest(@PathVariable("id") Long kyselyid) {
 		return krepository.findOne(kyselyid);
