@@ -64,9 +64,6 @@ public class WebController {
 		model.addAttribute("kysely", kyselyrepository.findOne(kyselyid));
 		model.addAttribute("ryhmat", ryhmarepository.findAll());
 		model.addAttribute("kysymykset", kysymysrepository.findByKysely(kysely=kyselyrepository.findOne(kyselyid)));
-		kysymyss = new Kysymys();
-		kysymyss.setKysely(kyselyrepository.findOne(kyselyid));
-		model.addAttribute("kysymyss", kysymyss);
 		return "muokkaakyselya";
 	}
 	

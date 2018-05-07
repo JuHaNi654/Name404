@@ -13,20 +13,31 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="uusikysymys">
+			<div id="hiddenDiv" style="display:none">
+                  <input type="button" value="Lisää vaihtoehto" onClick="lisaavaihtoehto"></input>
+            </div>
 				<form th:object="${kysymyss}" th:action="@{../tallennakysymys/{kyselyid}(kyselyid=${kysymyss.kysely.kyselyid})}" action="#" method="post">
-					<div class="col" id="valinta">
-					</div>
 					<div class="col">
 						<label for="tyyppi">Tyyppi</label>
-						<select id="tyyppi" name="tyyppi" th:field="*{tyyppi}">
+						<select id="tyyppi" name="tyyppi" th:field="*{tyyppi}" onchange="java_script_:show(this.options[this.selectedIndex].value)">
 	      					<option value="text">Text</option>
 	     					<option value="textarea">Textarea</option>
-	      					<option value="radio">Radio</option>
+	      					<option id="radio" value="radio">Radio</option>
+	      					<option value="select">Select</option>
+	      					<option value="number">Number</option>
+	      					<option value="range">Range</option>
+	      					<option value="email">Email</option>
 	    				</select>
+	    				
 						<label for="nimi">Kysymys</label>
 						<input type="text" th:field="*{kysymys}" />
+						
+						<div class="col" id="vaihtoehdot">
+						</div>
+						
 						<input type="hidden" th:field="*{kysely}" />
 					</div>
+					
 					<div class="col">
 						<input type="submit" value="Tallenna" class="btn btn-success"></input>
 					</div>
@@ -37,6 +48,26 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		function show(selected) {
+		    if (selected == "radio") {
+			    hiddenDiv.style.display='inline-block';
+			    Form.fileURL.focus();
+		    } 
+			    else{
+			    hiddenDiv.style.display='none';
+		    }
+	  	}
+  	</script>
+  	<script>
+  		function lisaavaihtoehto() {
+  			var x = document.createElement("INPUT");
+   			x.setAttribute("type", "text");
+   			
+    		document.getElementById("vaihtoehdot").appendChild(x);
+  		}
+	</script>
+	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
