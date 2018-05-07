@@ -32,24 +32,11 @@ public class WebController {
 		return "/kaikkikyselyt";
 	}
 	
-	@RequestMapping(value="/lisaa", method=RequestMethod.POST)
-	public String uusiKysely(@ModelAttribute("kysely") Kysely kysely, @ModelAttribute("kysymyss") Kysymys kysymyss, Model model) {
-		if(kysely.equals(null) ) {
-			kysely=new Kysely();
-			model.addAttribute("kysely", kysely);
-			kysymyss=new Kysymys();
-			kysymyss.setKysely(kysely);
-			model.addAttribute("kysymyss", kysymyss);
-			model.addAttribute("ryhmat", ryhmarepository.findAll());
-			kyselyrepository.save(kysely);
-			return "lisaakysely";
-		} else {
-			model.addAttribute("kysely", (kysely));
-			kysymyss=new Kysymys();
-			kysymyss.setKysely(kysely);
-			model.addAttribute("kysymyss", kysymyss);
-			return "lisaakysely";
-		}
+	@RequestMapping(value="/lisaa", method=RequestMethod.GET)
+	public String uusiKysely(Kysely kysely,  Model model) {
+		model.addAttribute("kysely", (kysely));
+		model.addAttribute("ryhmat", ryhmarepository.findAll());
+		return "lisaakysely";
 	}
 	
 	@RequestMapping(value="/tallenna", method=RequestMethod.POST)

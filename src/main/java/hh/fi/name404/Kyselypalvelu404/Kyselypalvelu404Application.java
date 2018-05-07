@@ -31,19 +31,5 @@ public class Kyselypalvelu404Application  {
 	public static void main(String[] args) {
 		SpringApplication.run(Kyselypalvelu404Application.class, args);
 	}
-	
-	@Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurerAdapter() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/kyselyt/1").allowedOrigins("*");
-                
-            }
-        };
-    }
-	
-	
-
 }
 
