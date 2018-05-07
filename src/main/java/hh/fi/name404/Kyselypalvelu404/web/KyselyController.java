@@ -4,15 +4,18 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import hh.fi.name404.Kyselypalvelu404.domain.Kysely;
 import hh.fi.name404.Kyselypalvelu404.domain.KyselyRepository;
 import hh.fi.name404.Kyselypalvelu404.domain.KysymysRepository;
 
-@Controller
+@RestController
+@CrossOrigin
 public class KyselyController {
 	@Autowired KyselyRepository krepository;
 	@Autowired KysymysRepository kyrepository;
@@ -21,6 +24,7 @@ public class KyselyController {
 	public @ResponseBody List<Kysely> kyselyListRest() {
 		return (List<Kysely>) krepository.findAll();
 	}
+	
 	@GetMapping(value="/kyselyt/{id}")
 	public @ResponseBody  Kysely findKyselyRest(@PathVariable("id") Long kyselyid) {
 		return krepository.findOne(kyselyid);
