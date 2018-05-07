@@ -28,12 +28,14 @@
 	    				
 						<label for="nimi">Kysymys</label>
 						<input type="text" th:field="*{kysymys}" />
-						
+						<label for="nimi">Vaihtoehto</label>
+						<input type="text" th:field="*{vaihtoehdot[]}" />
+						<input type="text" th:field="*{vaihtoehdot[]}" />
 						<div class="col" id="vaihtoehdot">
 						</div>
 						
 						<div id="hiddenDiv" style="display:none">
-                 			 <input type="button" value="Lisää vaihtoehto" onClick="lisaavaihtoehto"></input>
+                 			 <input type="button" value="Lisää vaihtoehto" onClick="lisaavaihtoehto()"></input>
            				</div>
 						
 						<input type="hidden" th:field="*{kysely}" />
