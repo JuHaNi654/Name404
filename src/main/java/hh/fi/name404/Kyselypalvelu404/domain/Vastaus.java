@@ -27,6 +27,12 @@ public class Vastaus {
 	public Vastaus() {
 
 	}
+	
+	public Vastaus(String vastaus, Kysymys kysymys) {
+		super();
+		this.vastaus = vastaus;
+		this.kysymys = kysymys;
+	}
 
 	public Vastaus(Long vastausid, String vastaus, Kysymys kysymys) {
 		super();
