@@ -41,6 +41,11 @@ public class Kysymys {
 	public Kysymys() {
 		super();
 	}
+	
+	public Kysymys(Long kysymysid) {
+		super();
+		this.kysymysid = kysymysid;
+	}
 
 	public Kysymys(Long kysymysid, String kysymys, String tyyppi, Kysely kysely) {
 		super();
