@@ -2,8 +2,19 @@
 	margin-right: 5px;
 }
 
+#tyyppi {
+	margin-right: 20px;
+}
+
+#rivitys {
+	line-height: 35px;
+}
+
 #poistakysymysnappi {
-	margin-left: 5px;
+	margin-left: 2px;
+	margin-bottom: 2px;
+	width: 70px;
+	float: right;
 }
 
 #vaihtoehdotlista {
