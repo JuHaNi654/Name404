@@ -63,7 +63,14 @@ public class WebController {
 		return "muokkaakyselya";
 	}
 	
-	   // Lisää kysymys kyselyyn (Get)
+	// Poista kysely
+	@RequestMapping(value="/poistakysely/{kyselyid}", method=RequestMethod.GET)
+	public String poistaKysely(@PathVariable("kyselyid") Long kyselyid){
+		kyselyrepository.delete(kyselyrepository.findOne(kyselyid));
+		return "redirect:/kaikkikyselyt";
+	}
+	
+	// Lisää kysymys kyselyyn (Get)
     @RequestMapping(value="/lisaakysymys/{kyselyid}", method=RequestMethod.GET)
     public String lisaaKysymys(@PathVariable("kyselyid") Long kyselyid, Model model, @ModelAttribute("kysymyss") Kysymys kysymyss,
                                 @ModelAttribute("vaihtoehtolista") VaihtoehtoLista vaihtoehtolista ) {
@@ -89,6 +96,14 @@ public class WebController {
         }
         return "redirect:/editkysely/{kyselyid}";
     }
+    
+    // Poista kysymys
+ 	@RequestMapping(value="/poistakysymys/{kysymysid}", method=RequestMethod.GET)
+ 	public String poistaKysymys(@PathVariable("kysymysid") Long kysymysid, Kysymys kysymys){
+ 		kysymys = kysymysrepository.findOne(kysymysid);
+ 		kysymysrepository.delete(kysymysrepository.findOne(kysymysid));
+ 		return "redirect:/editkysely/" + kysymys.getKysely().getKyselyid();
+ 	}
 
 	// REST API DOKUMENTTI
 
