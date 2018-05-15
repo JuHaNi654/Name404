@@ -15,7 +15,6 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="uusikysymys">
                 <form th:object="${kysymyss}" th:action="@{../tallennakysymys/{kyselyid}(kyselyid=${kysymyss.kysely.kyselyid})}" action="#" method="post">
-                    <div class="col">
                     	<div class="col">
                         <label for="tyyppi">Tyyppi</label>
                         <select id="tyyppi" name="tyyppi" th:field="*{tyyppi}" onchange="java_script_:show(this.options[this.selectedIndex].value)">
@@ -48,12 +47,9 @@
                         </div>
                         
                         <input type="hidden" th:field="*{kysely}" />
-                    </div>
                     
-                    <div class="col">
                         <input type="submit" value="Tallenna" class="btn btn-success"></input>
                         <a th:href="@{/editkysely/{kyselyid}(kyselyid=${kysymyss.kysely.kyselyid})}" class="btn btn-warning" id="buttons">Takaisin</a>
-                    </div>
                 </form>
             </div>
         </div>
