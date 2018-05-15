@@ -8,6 +8,7 @@
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css" th:href="@{/css/bootstrap.css}" />
     <link type="text/css" rel="stylesheet" href="css/bootstrap-grid.css" th:href="@{/css/bootstrap-grid.css}" />
     <link rel="stylesheet" type="text/css" href="css/tyylit.css" th:href="@{/css/tyylit.css}"/>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Skranji" rel="stylesheet"/>
 </head>
 <body>
     <div class="container">
@@ -34,8 +35,14 @@
                         </div>
                         
                         <div id="hiddenDiv" style="display:none">
-                             <input type="text" value="" name="vaihtoehto" id="vaihtoehto" onchange="lisaavaihtoehto()"></input>
-                             <input type="button" value="Lisää uusi vaihtoehto" onClick="uusivaihtoehto()"></input>
+                       		<div>
+                             	<input type="text" value="" name="vaihtoehto" id="vaihtoehto" onchange="lisaavaihtoehto()"></input>
+                             	<input type="button" value="Lisää vaihtoehtoihin" onClick="uusivaihtoehto()" class="btn btn-success"></input>
+                            </div>
+                            <div>
+                            	 <label for="vaihtoehdotlista">Vaihtoehdot:</label>
+                            	 <input type="textarea" value="" id="vaihtoehdotlista" readonly="readonly"></input>
+                        	</div>
                         </div>
                         
                         <input type="hidden" th:field="*{kysely}" />
@@ -43,11 +50,9 @@
                     
                     <div class="col">
                         <input type="submit" value="Tallenna" class="btn btn-success"></input>
+                        <a th:href="@{/editkysely/{kyselyid}(kyselyid=${kysymyss.kysely.kyselyid})}" class="btn btn-warning" id="buttons">Takaisin</a>
                     </div>
                 </form>
-                <div class="col">
-                    <a href="/back" class="btn btn-warning" id="buttons">Takaisin</a>
-                </div>
             </div>
         </div>
     </div>
@@ -73,6 +78,15 @@
     <script>
 		function uusivaihtoehto() {
 			document.getElementById("vaihtoehto").value = "";
+		}
+	</script>
+	<script>
+		var z = [];
+		function lisaavaihtoehto() {
+			var y = " ";
+			y=y+document.getElementById("vaihtoehto").value;
+			z.push(y);
+	        document.getElementById("vaihtoehdotlista").value = z;
 		}
 	</script>
     

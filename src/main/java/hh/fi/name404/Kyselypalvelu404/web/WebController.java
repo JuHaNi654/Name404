@@ -1,8 +1,5 @@
 package hh.fi.name404.Kyselypalvelu404.web;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,7 +56,7 @@ public class WebController {
 
 	// Muokkaa kyselyä (Get)
 	@RequestMapping(value="/editkysely/{kyselyid}", method=RequestMethod.GET)
-	public String editKysely(@PathVariable("kyselyid") Long kyselyid, Model model, @ModelAttribute("kysymyss") Kysymys kysymyss, Kysely kysely) {
+	public String editKysely(@PathVariable("kyselyid") Long kyselyid, Model model, @ModelAttribute("kysymyss") Kysymys kysymyss, @ModelAttribute("kysely") Kysely kysely) {
 		model.addAttribute("kysely", kyselyrepository.findOne(kyselyid));
 		model.addAttribute("ryhmat", ryhmarepository.findAll());
 		model.addAttribute("kysymykset", kysymysrepository.findByKysely(kysely=kyselyrepository.findOne(kyselyid)));
