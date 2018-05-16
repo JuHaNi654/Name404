@@ -9,10 +9,7 @@
         <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
         <link rel="stylesheet" type="text/css" href="/css/signin.css" th:href="@{/css/signin.css}"/>
     </head>
-    <body>
-
-  	  
-<div class="container">
+    <body class="text-center">
 
         <form th:action="@{/login}" method="post" id="login-form" class="form-signin">
         <div class="alert alert-danger" th:if="${param.error}">
@@ -21,12 +18,12 @@
         <div class="alert alert-warning" th:if="${param.logout}">
             Olet kirjautunut ulos
         </div>
-        <h2 class="form-signin-heading">Kirjaudu sisään</h2>
+        <h1 class="h3 mb-3 font-weight-normal">Kirjaudu sisään</h1>
             <div><label for="inputUsername" class="sr-only">Username</label> <input type="text" name="username" class="form-control" placeholder="Käyttäjätunnus"/></div>
             <div><label for="inputPassword" class="sr-only">Password</label> <input type="password" id="inputPassword" name="password" placeholder="Salasana" class="form-control"/></div>
             <div><button class="btn btn-lg btn-success btn-block" type="submit">Kirjaudu</button></div>
+         	<p class="mt-5 mb-3 text-muted">Name404</p>
             </form>
-            </div>
     </body>
 </html>
 
