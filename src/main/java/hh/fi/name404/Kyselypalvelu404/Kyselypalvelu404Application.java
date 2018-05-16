@@ -37,13 +37,15 @@ public class Kyselypalvelu404Application  {
 	public static void main(String[] args) {
 		SpringApplication.run(Kyselypalvelu404Application.class, args);
 	}
-	/*
-	@Bean
+	/* @Bean
 	public CommandLineRunner addUser(UserRepository urepository) {
 		return (args) -> {
+			//admin admin
 			urepository.save(new User("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN"));
-			urepository.save(new User("Ryhma4", "$2a$10$K3mDmN67IMgay.A.5PoJu.u18Cr4jJeB6XZjYPXwAYIo.Vr2nD8Su", "USER"));
-			urepository.save(new User("Digibox", "$2a$10$dmO4HssjKwYJi5fuH5jr3eFKaFY5EAPCYO/F57frxTUZe0uCFVtga", "USER"));
+			//ryhma4 ryhma4
+			urepository.save(new User("Ryhma4", "$2a$10$n7LsIxA3EfYqLIptXBWtgetlfijtrd6B21SyDunhmdKpM6Pzi.qmi", "USER"));
+			//digibox digibox
+			urepository.save(new User("Digibox", "$2a$10$V6lFfFcJ1xi/0sWNJFTsUOdy.WXoJ8w5sHACL3rN0Fm6HjanXVyp6", "USER"));
 			
 		};
 	}
