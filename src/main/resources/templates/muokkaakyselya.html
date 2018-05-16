@@ -51,7 +51,7 @@
 				<div class="row">
 					<div>
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:each = "kysymyss, iter : ${kysymykset}">
-						<div class="col"><p id="rivitys"><span><a id="poistakysymysnappi" th:href="@{/poistakysymys/{kysymysid}(kysymysid=${kysymyss.kysymysid})}" class="btn btn-danger">Poista</a></span><span>Kysymys </span><span th:text="${iter.index+1}"></span><span>. </span> <span th:text="${kysymyss.kysymys}"></span><span> - Tyyppi: </span><span id="tyyppi" th:text="${kysymyss.tyyppi}"></span></p></div>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p id="rivitys"><span><a id="poistakysymysnappi" th:href="@{/poistakysymys/{kysymysid}(kysymysid=${kysymyss.kysymysid})}" class="btn btn-danger">Poista</a></span><span>Kysymys </span><span th:text="${iter.index+1}"></span><span>. </span> <span id="kysymys" th:text="${kysymyss.kysymys}"></span><span> - Tyyppi: </span><span id="tyyppi" th:text="${kysymyss.tyyppi}"></span></p></div>
 					</div>
 				</div>
 				</div>

@@ -27,7 +27,7 @@
 .container {
 	padding: 20px;
 	margin-top: 20px;
-
+	opacity: 0.97;
 	background-color: rgb(188, 208, 219);
 }
 
@@ -43,6 +43,8 @@
 
 body {
 	background-color: #EDFAFD;
+	background-image: url("repeatbackground.jpg");
+	background-repeat: repeat;
 }
 
 input {
@@ -55,6 +57,7 @@ h1 {
 
 p {
 	font-family: 'Oswald', sans-serif;
+	word-wrap: break-word;
 }
 
 label {
@@ -63,4 +66,8 @@ label {
 
 a {
 	font-family: 'Oswald', sans-serif;
+}
+
+span {
+	word-wrap: break-word;
 }
