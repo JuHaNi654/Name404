@@ -62,48 +62,48 @@ public class WebController {
 		model.addAttribute("kysymykset", kysymysrepository.findByKysely(kysely=kyselyrepository.findOne(kyselyid)));
 		return "muokkaakyselya";
 	}
-	
+
 	// Poista kysely
 	@RequestMapping(value="/poistakysely/{kyselyid}", method=RequestMethod.GET)
 	public String poistaKysely(@PathVariable("kyselyid") Long kyselyid){
 		kyselyrepository.delete(kyselyrepository.findOne(kyselyid));
 		return "redirect:/kaikkikyselyt";
 	}
-	
+
 	// Lisää kysymys kyselyyn (Get)
-    @RequestMapping(value="/lisaakysymys/{kyselyid}", method=RequestMethod.GET)
-    public String lisaaKysymys(@PathVariable("kyselyid") Long kyselyid, Model model, @ModelAttribute("kysymyss") Kysymys kysymyss,
-                                @ModelAttribute("vaihtoehtolista") VaihtoehtoLista vaihtoehtolista ) {
-        kysymyss = new Kysymys();
-        kysymyss.setKysely(kyselyrepository.findOne(kyselyid));
-        model.addAttribute("kysymyss", kysymyss);
-        model.addAttribute("vaihtoehtolista", new VaihtoehtoLista());
-        return "lisaakysymys";
-    }
-    
-    // Tallenna kysymys (Post)
-    @RequestMapping(value="/tallennakysymys/{kyselyid}", method=RequestMethod.POST)
-    public String saveKysymys(@PathVariable("kyselyid") Long kyselyid, @ModelAttribute("kysymyss") Kysymys kysymyss, Model model, 
-                                Kysely kysely, @Valid VaihtoehtoLista vaihtoehtolista, BindingResult bresult){
-        kysymysrepository.save(kysymyss);
-        System.out.println(vaihtoehtolista.getVaihtoehdott());
-        for (int i = 0; vaihtoehtolista.getVaihtoehdott().size() > i; ++i) {
-            String vehto = vaihtoehtolista.getVaihtoehdott().get(i);
-            Vaihtoehto newVaihtoehto = new Vaihtoehto();
-            newVaihtoehto.setVaihtoehto(vehto);
-            newVaihtoehto.setKysymys(kysymyss);
-            vaihtoehtorepository.save(newVaihtoehto);
-        }
-        return "redirect:/editkysely/{kyselyid}";
-    }
-    
-    // Poista kysymys
- 	@RequestMapping(value="/poistakysymys/{kysymysid}", method=RequestMethod.GET)
- 	public String poistaKysymys(@PathVariable("kysymysid") Long kysymysid, Kysymys kysymys){
- 		kysymys = kysymysrepository.findOne(kysymysid);
- 		kysymysrepository.delete(kysymysrepository.findOne(kysymysid));
- 		return "redirect:/editkysely/" + kysymys.getKysely().getKyselyid();
- 	}
+	@RequestMapping(value="/lisaakysymys/{kyselyid}", method=RequestMethod.GET)
+	public String lisaaKysymys(@PathVariable("kyselyid") Long kyselyid, Model model, @ModelAttribute("kysymyss") Kysymys kysymyss,
+			@ModelAttribute("vaihtoehtolista") VaihtoehtoLista vaihtoehtolista ) {
+		kysymyss = new Kysymys();
+		kysymyss.setKysely(kyselyrepository.findOne(kyselyid));
+		model.addAttribute("kysymyss", kysymyss);
+		model.addAttribute("vaihtoehtolista", new VaihtoehtoLista());
+		return "lisaakysymys";
+	}
+
+	// Tallenna kysymys (Post)
+	@RequestMapping(value="/tallennakysymys/{kyselyid}", method=RequestMethod.POST)
+	public String saveKysymys(@PathVariable("kyselyid") Long kyselyid, @ModelAttribute("kysymyss") Kysymys kysymyss, Model model, 
+			Kysely kysely, @Valid VaihtoehtoLista vaihtoehtolista, BindingResult bresult){
+		kysymysrepository.save(kysymyss);
+		System.out.println(vaihtoehtolista.getVaihtoehdott());
+		for (int i = 0; vaihtoehtolista.getVaihtoehdott().size() > i; ++i) {
+			String vehto = vaihtoehtolista.getVaihtoehdott().get(i);
+			Vaihtoehto newVaihtoehto = new Vaihtoehto();
+			newVaihtoehto.setVaihtoehto(vehto);
+			newVaihtoehto.setKysymys(kysymyss);
+			vaihtoehtorepository.save(newVaihtoehto);
+		}
+		return "redirect:/editkysely/{kyselyid}";
+	}
+
+	// Poista kysymys
+	@RequestMapping(value="/poistakysymys/{kysymysid}", method=RequestMethod.GET)
+	public String poistaKysymys(@PathVariable("kysymysid") Long kysymysid, Kysymys kysymys){
+		kysymys = kysymysrepository.findOne(kysymysid);
+		kysymysrepository.delete(kysymysrepository.findOne(kysymysid));
+		return "redirect:/editkysely/" + kysymys.getKysely().getKyselyid();
+	}
 
 	// REST API DOKUMENTTI
 
@@ -116,5 +116,12 @@ public class WebController {
 	public String restApiDokumenttiReD() {	
 		return "redirect:/index";
 	}
+	
+	// Kirjautuminen
+	
+	@RequestMapping(value="/login")
+    public String login() {	
+        return "login";
+    }	
 
 }

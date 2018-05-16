@@ -6,6 +6,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -15,6 +16,7 @@ public class Ryhma {
 	@Id
 	private Long ryhmaid;
 	
+	@NotNull
 	private String nimi;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "ryhma")
