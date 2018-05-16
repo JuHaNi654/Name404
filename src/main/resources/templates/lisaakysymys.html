@@ -45,9 +45,8 @@
                              	<input type="button" value="Lisää vaihtoehtoihin" onClick="uusivaihtoehto()" class="btn btn-success"></input>
                             </div>
                             <div class="col">
-                            	 <label for="vaihtoehdotlista">Vaihtoehdot:</label>
+                            	 <p><span>Vaihtoehdot: </span><span id="vaihtoehdotlista"></span></p>
                         	</div>
-                        		<input type="textarea" rows="10" cols="50" value="" id="vaihtoehdotlista" readonly="readonly"></input>
                         </div>
                         
                         <input type="hidden" th:field="*{kysely}" />
@@ -94,7 +93,7 @@
 			var y = " ";
 			y=y+document.getElementById("vaihtoehto").value;
 			z.push(y);
-	        document.getElementById("vaihtoehdotlista").value = z;
+	        document.getElementById("vaihtoehdotlista").innerHTML = z;
 		}
 	</script>
     
