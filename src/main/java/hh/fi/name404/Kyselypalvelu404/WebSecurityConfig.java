@@ -31,6 +31,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	        .and()
 	        .authorizeRequests().antMatchers("/index").permitAll()
 	        .and()
+	        .authorizeRequests().antMatchers("/").permitAll()
+	        .and()
 	        .authorizeRequests().antMatchers("/addvastaus").permitAll()
 	        .and()
 	        .authorizeRequests().anyRequest().authenticated()

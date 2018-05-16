@@ -37,6 +37,7 @@ public class Kyselypalvelu404Application  {
 	public static void main(String[] args) {
 		SpringApplication.run(Kyselypalvelu404Application.class, args);
 	}
+	/*
 	@Bean
 	public CommandLineRunner addUser(UserRepository urepository) {
 		return (args) -> {
@@ -48,6 +49,6 @@ public class Kyselypalvelu404Application  {
 			urepository.save(new User("Digibox", "$2a$10$V6lFfFcJ1xi/0sWNJFTsUOdy.WXoJ8w5sHACL3rN0Fm6HjanXVyp6", "USER"));
 			
 		};
-	}
+	}*/
 }
 
