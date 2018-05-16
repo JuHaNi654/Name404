@@ -36,6 +36,7 @@
 	background-image: url("error.jpg");
 	background-repeat: no-repeat;
     background-size: 1920px 144px;
+    background-color: rgb(188, 208, 219);
 	text-align: center;
 	margin-bottom: 20px !important;
 	margin-top: -30px !important;
