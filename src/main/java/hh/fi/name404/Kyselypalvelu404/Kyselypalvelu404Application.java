@@ -37,7 +37,7 @@ public class Kyselypalvelu404Application  {
 	public static void main(String[] args) {
 		SpringApplication.run(Kyselypalvelu404Application.class, args);
 	}
-	/* @Bean
+	@Bean
 	public CommandLineRunner addUser(UserRepository urepository) {
 		return (args) -> {
 			//admin admin
@@ -49,6 +49,5 @@ public class Kyselypalvelu404Application  {
 			
 		};
 	}
-	*/
 }
 

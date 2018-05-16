@@ -13,7 +13,7 @@
             Väärä käyttäjätunnus tai salasana
         </div>
         <div class="alert alert-warning" th:if="${param.logout}">
-            Oler kirjautunut ulos
+            Olet kirjautunut ulos
         </div>
         <form th:action="@{/login}" method="post" class="form-signin">
             <div><label>Käyttäjätunnus: <input type="text" name="username" class="form-control"/> </label></div>
