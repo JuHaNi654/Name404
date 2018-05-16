@@ -28,7 +28,7 @@
 .container {
 	padding: 20px;
 	margin-top: 20px;
-	opacity: 0.97;
+	opacity: 0.985;
 	background-color: rgb(188, 208, 219);
 }
 
@@ -40,6 +40,7 @@
 	margin-bottom: 20px !important;
 	margin-top: -30px !important;
 	padding-bottom: 20px !important;
+	opacity: 0.98;
 }
 
 body {
