@@ -16,6 +16,8 @@ public class Vastaus {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long vastausid;
+	
+	@NotNull
 	private String vastaus;
 	
 	@ManyToOne

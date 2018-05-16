@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -22,6 +23,8 @@ public class Kysely {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long kyselyid;
+	
+	@NotNull
 	private String nimi;
 	
 	@JsonIgnoreProperties({"vastaukset"})
@@ -31,6 +34,7 @@ public class Kysely {
 	
 	@ManyToOne
 	@JoinColumn(name="ryhmaid")
+	@NotNull
 	private Ryhma ryhma;
 	
 	public Kysely() {

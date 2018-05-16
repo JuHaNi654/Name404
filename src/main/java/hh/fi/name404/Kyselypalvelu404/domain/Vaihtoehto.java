@@ -17,6 +17,7 @@ public class Vaihtoehto {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long vaihtoehtoid;
 	
+	@NotNull
 	private String vaihtoehto;
 	
 	@ManyToOne
