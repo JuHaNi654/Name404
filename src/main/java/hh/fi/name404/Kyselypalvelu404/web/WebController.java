@@ -38,7 +38,7 @@ public class WebController {
 	@RequestMapping(value="/kaikkikyselyt", method=RequestMethod.GET)
 	public String kyselytListattuna(Model model) {
 		model.addAttribute("kyselyt", kyselyrepository.findAll());
-		return "/kaikkikyselyt";
+		return "kaikkikyselyt";
 	}
 	// Lisää kysely
 	@RequestMapping(value="/lisaa", method=RequestMethod.GET)
