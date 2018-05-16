@@ -74,3 +74,17 @@ a {
 span {
 	word-wrap: break-word;
 }
+
+@media (max-width: 860px) {
+	.jumbotron {
+		background-image: url("");
+		background-repeat: no-repeat;
+	    background-size: 600px 144px;
+	    background-color: rgb(188, 208, 219);
+		text-align: center;
+		margin-bottom: 20px !important;
+		margin-top: -30px !important;
+		padding-bottom: 20px !important;
+		opacity: 0.98;
+	}
+}
