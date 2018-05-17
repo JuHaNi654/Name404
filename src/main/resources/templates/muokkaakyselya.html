@@ -18,7 +18,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="kysely">
-				<form th:object="${kysely}" th:action="@{../tallenna}" action="#" method="post">
+				<form th:object="${kysely}" th:action="@{../tallennakysely}" action="#" method="post">
 					<input type="hidden" th:field="*{kyselyid}" />
 					<input type="hidden" th:field="*{ryhma.ryhmaid}" />
 					

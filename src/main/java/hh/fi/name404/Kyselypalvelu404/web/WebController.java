@@ -53,6 +53,13 @@ public class WebController {
 		kyselyrepository.save(kysely);
 		return "redirect:/editkysely/" + kysely.getKyselyid();
 	}
+	
+	// Tallenna kysely editissä ja palaa kaikkiin kyselyihin (Post)
+	@RequestMapping(value="/tallennakysely", method=RequestMethod.POST)
+	public String saveKysely2(@ModelAttribute("kysely") Kysely kysely){
+		kyselyrepository.save(kysely);
+		return "redirect:/kaikkikyselyt/";
+	}
 
 	// Muokkaa kyselyä (Get)
 	@RequestMapping(value="/editkysely/{kyselyid}", method=RequestMethod.GET)
